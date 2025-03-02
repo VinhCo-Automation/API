@@ -1,7 +1,18 @@
 from flask import Flask, request
-import json
+import logging
+from datetime import datetime
+import pytz
 
 app = Flask(__name__)
+
+# Cấu hình múi giờ GMT+7 (Asia/Ho_Chi_Minh)
+tz = pytz.timezone('Asia/Ho_Chi_Minh')
+
+# Cấu hình logging với múi giờ GMT+7
+logging.basicConfig(level=logging.INFO, 
+                    format='%(asctime)s - %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')  # Định dạng thời gian
+logging.Formatter.converter = lambda *args: datetime.now(tz).timetuple()
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -9,7 +20,7 @@ def home():
         data = request.json
         if not data:
             return {"error": "No JSON data provided"}, 400
-        print(json.dumps(data, indent=4, ensure_ascii=False))  # In đẹp hơn
+        logging.info(f"Dữ liệu nhận được: {data}")
         return {"received": data}, 200
     return {"message": "Hello, World!"}, 200
 
