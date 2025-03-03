@@ -24,7 +24,7 @@ db_config = {
     'user': os.getenv('MYSQL_USER', 'avnadmin'),
     'password': os.getenv('MYSQL_PASSWORD', 'AVNS_LtPth-518YorMfZzh5H'),
     'database': os.getenv('MYSQL_DATABASE', 'defaultdb'),
-    'ssl_ca': os.getenv('MYSQL_SSL_CA', None)  # Lấy CA certificate từ biến môi trường
+    'ssl_ca': '/etc/secrets/ca-cert.pem'
 }
 
 # Hàm kết nối tới MySQL
