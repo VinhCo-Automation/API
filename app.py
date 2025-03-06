@@ -21,8 +21,8 @@ logging.Formatter.converter = lambda *args: datetime.now(tz).timetuple()
 db_config = {
     'host': os.getenv('MYSQL_HOST', 'localhost'),  # Thay đổi thành 'localhost' hoặc '127.0.0.1'
     'port': int(os.getenv('MYSQL_PORT', '3306')),  # Cổng mặc định của MySQL là 3306
-    'user': os.getenv('MYSQL_USER', 'your_user'),  # Thay đổi thành tên người dùng MySQL của bạn
-    'password': os.getenv('MYSQL_PASSWORD', 'your_password'),  # Thay đổi thành mật khẩu MySQL của bạn
+    'user': os.getenv('MYSQL_USER', 'root'),  # Thay đổi thành tên người dùng MySQL của bạn
+    'password': os.getenv('MYSQL_PASSWORD', '1234'),  # Thay đổi thành mật khẩu MySQL của bạn
     'database': os.getenv('MYSQL_DATABASE', 'my_api'),  # Thay đổi thành tên cơ sở dữ liệu của bạn
 }
 
