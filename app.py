@@ -17,14 +17,15 @@ logging.basicConfig(level=logging.INFO,
                     datefmt='%Y-%m-%d %H:%M:%S')
 logging.Formatter.converter = lambda *args: datetime.now(tz).timetuple()
 
-# Cấu hình MySQL từ Clever Cloud (Bảo mật thông tin bằng biến môi trường)
+# Cấu hình MySQL từ Clever Cloud
 db_config = {
-    'host': os.getenv('MYSQL_ADDON_HOST', 'bq2xyhmvaxjqurdi08ap-mysql.services.clever-cloud.com'),
+    'host': os.getenv('MYSQL_ADDON_HOST', 'b3tctusvlvharcpxgk0x-mysql.services.clever-cloud.com'),
     'port': int(os.getenv('MYSQL_ADDON_PORT', 3306)),
-    'user': os.getenv('MYSQL_ADDON_USER', 'uvacyenejobmkwhw'),
-    'password': os.getenv('MYSQL_ADDON_PASSWORD', '######'),  # Cần nhập đúng mật khẩu
-    'database': os.getenv('MYSQL_ADDON_DB', 'bq2xyhmvaxjqurdi08ap'),
+    'user': os.getenv('MYSQL_ADDON_USER', 'uutfyaq5terklpid'),
+    'password': os.getenv('MYSQL_ADDON_PASSWORD', 'hmFL9JYj9speFoLSuw1d'),  # Thay mật khẩu thực tế
+    'database': os.getenv('MYSQL_ADDON_DB', 'b3tctusvlvharcpxgk0x'),
 }
+
 
 # Hàm kết nối MySQL
 def get_db_connection():
