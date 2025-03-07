@@ -51,7 +51,7 @@ def receive_data():
     cursor = connection.cursor()
     try:
         query = """
-        INSERT INTO api_1 (ID_DEVICE, DATE, TIME, VALUE_1, VALUE_2) 
+        INSERT INTO Device_1 (ID_DEVICE, DATE, TIME, VALUE_1, VALUE_2) 
         VALUES (%s, %s, %s, %s, %s)
         """
         # Lấy dữ liệu từ JSON
